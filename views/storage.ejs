@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
     <style>
-      .ctable {
-       
-        margin: auto;
-        border: solid 1px #DDEEEE;
-        border-collapse: collapse;
-        border-spacing: 0;
-        font: normal 30px Arial, sans-serif;
-        vertical-align: 10px top;
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
     }
-    .ctable thead th {
-        background-color: #DDEFEF;
-        border: solid 1px #DDEEEE;
-        color: #1d191a;
-        padding: 10px;
-        text-align: left;
-        text-shadow: 1px 1px 1px #fff;
-        font-size: 30px;
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
     }
-    .ctable tbody td {
-        border: solid 1px #DDEEEE;
-        color: #333;
-        padding: 10px;
-        text-shadow: 1px 1px 1px #fff;
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #000000;
+      color: white;
     }
   body{
         overflow-x: hidden;
@@ -41,7 +39,7 @@
 
 
         <!-- Table of Contents -->
-        <table class="ctable">
+        <table id="customers">
           <thead>
               <tr>
                   <th>Name</th>
@@ -63,7 +61,7 @@
             <% } %>
           </tbody> 
         </table>
-        <button class="btn btn-primary btn-block"> <a href="/users/new" >New Entry</a></button>
+        <button > <a class="btn btn-primary btn-block" href="/users/new" >New Entry</a></button>
 
 </body>
 </html>
