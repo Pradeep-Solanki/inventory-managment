@@ -2,10 +2,34 @@
 <html lang="en">
 <head>
     <style>
-  
+      .ctable {
+       
+        margin: auto;
+        border: solid 1px #DDEEEE;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font: normal 30px Arial, sans-serif;
+        vertical-align: 10px top;
+    }
+    .ctable thead th {
+        background-color: #DDEFEF;
+        border: solid 1px #DDEEEE;
+        color: #1d191a;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+        font-size: 30px;
+    }
+    .ctable tbody td {
+        border: solid 1px #DDEEEE;
+        color: #333;
+        padding: 10px;
+        text-shadow: 1px 1px 1px #fff;
+    }
   body{
         overflow-x: hidden;
-      
+        text-align: center;
+        font-size: 20px;
       }
     </style>
     <meta charset="UTF-8">
@@ -14,18 +38,32 @@
     <title>Document</title>
 </head>
 <body >
-  
-        <!-- Table of Contents -->
-        <div class="col mr-5 text-left ">
-          
-          <% for(let obj of objects){ %>
-          <h1><%=obj.name%> <%=obj.quantity%> <%=obj.price%> 
-             <form action="/users/<%=obj._id%>?_method=DELETE" method="post"><button type="submit">Delete</button></form>
-            </h1>  
-          <% } %>
-          <button><a href="/users/new">New Entry</a></button>
-        </div>
 
+
+        <!-- Table of Contents -->
+        <table class="ctable">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Delete</th>
+              </tr>
+          </thead>
+          <tbody>
+             
+         
+          <% for(let obj of objects){ %>
+            <tr>
+              <td><%=obj.name%></td>
+              <td><%=obj.quantity%></td>
+              <td>Rs. <%=obj.price%> </td>
+              <td><form action="/users/<%=obj._id%>?_method=DELETE" method="post"><button type="submit" class="btn btn-primary btn-block">Delete</button></form>   </td> 
+            </tr>
+            <% } %>
+          </tbody> 
+        </table>
+        <button class="btn btn-primary btn-block"> <a href="/users/new" >New Entry</a></button>
 
 </body>
 </html>
