@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+  
+  body{
+        overflow-x: hidden;
+      
+      }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+  
+        <!-- Table of Contents -->
+        <div class="col mr-5 text-left ">
+          
+          <% for(let obj of objects){ %>
+          <h1><%=obj.name%> <%=obj.quantity%> <%=obj.price%> 
+             <form action="/users/<%=obj._id%>?_method=DELETE" method="post"><button type="submit">Delete</button></form>
+            </h1>  
+          <% } %>
+          <button><a href="/users/new">New Entry</a></button>
+        </div>
+
+
+</body>
+</html>

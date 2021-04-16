@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Object</title>
+</head>
+<body>
+    <h1>Add an Entry</h1>
+    <form action="/users/storage" method="POST">
+        <label for="name">Object Name</label>
+        <input type="text" name="name" id="name" placeholder="name">
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" id="quantity" placeholder="quantity">
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price" placeholder="Price">
+        <button type="submit">Submit the details</button>
+    </form>
+</body>
+</html>
