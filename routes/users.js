@@ -43,6 +43,17 @@ router.delete('/:id',async (req,res)=>{
     const deletedobj=await Object.findByIdAndDelete(id);
     res.redirect('storage');
 })
+
+router.get('/:id/edit',async (req,res)=>{
+    const {id}=req.params;
+    const obj = await Object.findById(id);
+    res.render('edit',{obj});
+})
+router.put('/:id',async(req,res)=>{
+    const {id}=req.params;
+    await Object.findByIdAndUpdate(id,req.body,{runValidators: true, new:true});
+    res.redirect('storage');
+})
 // Login Handle
 router.post('/login',(req,res,next)=>{
     passport.authenticate('local',{
